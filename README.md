@@ -167,6 +167,3 @@ minikube service iam-monitor-web -n musinsa
 - Minikube를 사용하여 로컬에서 개발 환경을 테스트하세요.
 - kubectl과 Kubernetes 버전이 호환되지 않는 문제가 발생하면 Minikube에서 권장하는 버전을 사용하세요.
 
-## 라이선스
-
-이 프로젝트는 MIT 라이선스에 따라 라이선스가 부여됩니다 - 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
