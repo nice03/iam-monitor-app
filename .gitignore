@@ -1,0 +1,38 @@
+# .gitignore
+
+# Python 관련
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Node.js 관련
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+
+# Docker 관련
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+docker-compose.override.yml
+
+# Kubernetes 관련
+deploy/minikube/secrets/*.yaml
+!deploy/minikube/secrets/*.template
+
+# 기타
+.DS_Store
+.idea/
+.vscode/
+*.swp
