@@ -5,6 +5,7 @@
 이 애플리케이션은 AWS IAM 사용자 액세스 키를 모니터링하여 오래된 키와 미사용 키를 추적하여 보안 관리를 돕습니다.
 
 > **참고**: 이 가이드는 M1 Mac에 minikube와 Docker가 설치되어 있다고 가정합니다.
+<img width="1379" alt="스크린샷 2024-11-07 오후 6 09 00" src="https://github.com/user-attachments/assets/e83641a9-f1b3-4d97-84a0-e445cff9c150">
 
 ## 사전 준비 사항
 
