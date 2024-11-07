@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="AWS IAM User Monitoring System">
+    
+    <title>IAM Monitor</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #3498db;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- React root element -->
+    <div id="root">
+        <!-- Loading state before React loads -->
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Error boundary for production -->
+    <div id="error-container" style="display: none;">
+        <div class="min-h-screen flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full">
+                <h2 class="text-2xl font-bold text-red-600 mb-4">
+                    Something went wrong
+                </h2>
+                <p class="text-gray-600 mb-4">
+                    The application failed to load. Please try refreshing the page.
+                </p>
+                <button onclick="window.location.reload()" 
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    Refresh Page
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Basic error handling
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            document.getElementById('root').style.display = 'none';
+            document.getElementById('error-container').style.display = 'block';
+            return false;
+        };
+
+        // Add basic browser compatibility check
+        if (!window.Promise || !window.fetch) {
+            alert('Your browser is not supported. Please use a modern browser.');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iam-monitor-api
+  namespace: musinsa
+  labels:
+    app: iam-monitor
+    component: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iam-monitor
+      component: api
+  template:
+    metadata:
+      labels:
+        app: iam-monitor
+        component: api
+    spec:
+      containers:
+      - name: iam-monitor-api
+        image: iam-monitor-api:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+          name: http
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: iam-monitor-api-secrets
+              key: AWS_ACCESS_KEY_ID
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: iam-monitor-api-secrets
+              key: AWS_SECRET_ACCESS_KEY
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"

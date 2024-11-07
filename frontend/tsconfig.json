@@ -1,0 +1,42 @@
+// frontend/tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es5",                          // 컴파일된 JavaScript의 버전
+    "lib": [                                  // 사용할 라이브러리 정의
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,                          // JavaScript 파일 허용
+    "skipLibCheck": true,                     // 라이브러리 파일의 타입 체크 스킵
+    "esModuleInterop": true,                  // CommonJS/AMD/UMD 모듈을 ES6 모듈처럼 사용
+    "allowSyntheticDefaultImports": true,     // default export가 없는 모듈에서도 default import 허용
+    "strict": true,                           // 모든 엄격한 타입-체킹 옵션 활성화
+    "forceConsistentCasingInFileNames": true, // 파일 이름의 대소문자 구분 강제
+    "noFallthroughCasesInSwitch": true,      // switch문에서 fallthrough 케이스 에러 처리
+    "module": "esnext",                       // 모듈 코드 생성 설정
+    "moduleResolution": "node",               // 모듈 해석 방식 설정
+    "resolveJsonModule": true,                // .json 확장자의 모듈 import 허용
+    "isolatedModules": true,                  // 각 파일을 분리된 모듈로 트랜스파일
+    "noEmit": true,                          // 결과물 파일 생성하지 않음 (Create React App에서 처리)
+    "jsx": "react-jsx",                      // JSX 처리 설정
+    "baseUrl": "src",                        // 모듈 해석의 기준 디렉토리
+    "paths": {                               // 모듈 별칭 설정
+      "@/*": ["*"],
+      "@components/*": ["components/*"],
+      "@services/*": ["services/*"],
+      "@types/*": ["types/*"]
+    }
+  },
+  "include": [                               // 컴파일 대상 파일 설정
+    "src/**/*",                              // src 디렉토리의 모든 파일
+    "**/*.ts",                               // 모든 TypeScript 파일
+    "**/*.tsx"                               // 모든 TypeScript React 파일
+  ],
+  "exclude": [                               // 컴파일 제외 대상
+    "node_modules",                          // node_modules 디렉토리
+    "build",                                 // 빌드 결과물 디렉토리
+    "dist",                                  // 배포 결과물 디렉토리
+    "coverage"                               // 테스트 커버리지 디렉토리
+  ]
+}

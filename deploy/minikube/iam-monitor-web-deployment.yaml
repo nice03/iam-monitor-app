@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iam-monitor-web
+  namespace: musinsa
+  labels:
+    app: iam-monitor
+    component: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iam-monitor
+      component: web
+  template:
+    metadata:
+      labels:
+        app: iam-monitor
+        component: web
+    spec:
+      containers:
+        - name: iam-monitor-web
+          image: iam-monitor-web:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+              name: http
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "300m"
+            requests:
+              memory: "128Mi"
+              cpu: "150m"
