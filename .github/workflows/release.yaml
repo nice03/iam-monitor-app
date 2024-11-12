@@ -34,7 +34,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run semantic-release
-          working-directory: ./frontend  # frontend 디렉토리에서 semantic-release 실행
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: npx semantic-release
+        working-directory: ./frontend  # frontend 디렉토리에서 semantic-release 실행
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
