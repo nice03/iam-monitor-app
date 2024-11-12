@@ -19,7 +19,8 @@ jobs:
           node-version: '20.8.1'
 
       - name: Install dependencies
-        run: npm install  # 루트 디렉토리에서 npm install 실행
+        working-directory: ./frontend  # frontend 디렉토리에서 npm install 실행
+        run: npm install
 
       - name: Setup Python
         uses: actions/setup-python@v3
@@ -33,6 +34,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run semantic-release
+        working-directory: ./frontend  # frontend 디렉토리에서 semantic-release 실행
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
