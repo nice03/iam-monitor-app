@@ -1,9 +1,9 @@
-name: Release
+name: develop release
 
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   release:

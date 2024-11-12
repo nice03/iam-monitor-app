@@ -166,4 +166,4 @@ minikube service iam-monitor-web -n musinsa
 - AWS 자격증명은 반드시 안전하게 관리하세요.
 - Minikube를 사용하여 로컬에서 개발 환경을 테스트하세요.
 - kubectl과 Kubernetes 버전이 호환되지 않는 문제가 발생하면 Minikube에서 권장하는 버전을 사용하세요.
-
+- feature new
